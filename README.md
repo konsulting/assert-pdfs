@@ -1,4 +1,4 @@
-# assertPdf
+# assert-pdfs
 
 A simple assertion package to work with PDFs and PHPUnit.
 
