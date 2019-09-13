@@ -11,7 +11,7 @@ This is effectively a package up of
 [this starting point from Gordon Lesti](https://gordonlesti.com/phpunit-compare-generated-pdf-files-with-imagick).
 
 ## Installation
-``` composer require --dev konsulting/assert-pdf ```
+``` composer require --dev konsulting/assert-pdfs ```
 
 ## Usage
 
