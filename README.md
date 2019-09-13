@@ -15,7 +15,7 @@ This is effectively a package up of
 
 ## Usage
 
-Include the trait on your test class. Available methods:
+Use the `Konsulting\Testing\AssertPdfs` trait on your test class. Available methods:
 
 ` assertPdfSame($assertedPdf, $testPdf, $saveDiffToFile = null)` - You can optionally save the diff of the pdf on
  failure to a file by providing a path to save to.
