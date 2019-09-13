@@ -1,0 +1,28 @@
+{
+  "name": "konsulting/assert-pdfs",
+  "description": "Simple PHP(Unit) Package to help with making assertions on PDFs",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Keoghan Litchfield",
+      "email": "keoghan@klever.co.uk"
+    }
+  ],
+  "require-dev": {
+    "phpunit/phpunit": "^7.5"
+  },
+  "require": {
+    "ext-imagick": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Konsulting\\Testing\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  }
+}

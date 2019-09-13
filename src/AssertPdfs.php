@@ -1,16 +1,16 @@
 <?php
 
 
-namespace Tests;
+namespace Konsulting\Testing;
 
 
 use Imagick;
 use PHPUnit\Framework\Assert;
 use PHPUnit\Framework\ExpectationFailedException;
 
-trait assertsPdfs
+trait AssertPdfs
 {
-    public function assertPdfSame($assertedPdf, $testPdf, $saveDiffToFile = null)
+    public function assertPdfSame($assertedPdf, $testPdf, $saveDiffToFile = null, $metric = null)
     {
         // Adapted from: https://gordonlesti.com/phpunit-compare-generated-pdf-files-with-imagick/
 
@@ -24,8 +24,8 @@ trait assertsPdfs
         $testImagick->resetIterator();
         $testImagick = $testImagick->appendImages(true);
 
-        list($diffImage, $diffMeasure) = $assertedImagick->compareImages($testImagick,
-            Imagick::METRIC_ABSOLUTEERRORMETRIC);
+        $metric = $metric ?: Imagick::METRIC_ABSOLUTEERRORMETRIC;
+        list($diffImage, $diffMeasure) = $assertedImagick->compareImages($testImagick, $metric);
 
         try {
             Assert::assertSame(0.0, $diffMeasure);
