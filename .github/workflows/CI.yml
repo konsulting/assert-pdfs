@@ -13,7 +13,9 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y php7.3-imagick
-    - name: Install dependencies
+    - name: Allow Imagick to read/write PDFs
+      run: sudo sed -i -e 's/rights="none" pattern="PDF"/rights="read|write" pattern="PDF"/' /etc/ImageMagick-6/policy.xml
+    - name: Install Composer dependencies
       run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
     - name: Execute tests
       run: vendor/bin/phpunit
