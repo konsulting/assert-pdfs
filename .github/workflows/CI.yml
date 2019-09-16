@@ -9,10 +9,11 @@ jobs:
     
     steps:
     - uses: actions/checkout@v1
-    - name: Install system dependencies
+    - name: Set up system
       run: |
         sudo apt-get update
         sudo apt-get install -y php7.3-imagick
+        mkdir tests/diffs
     - name: Allow Imagick to read/write PDFs
       run: sudo sed -i -e 's/rights="none" pattern="PDF"/rights="read|write" pattern="PDF"/' /etc/ImageMagick-6/policy.xml
     - name: Install Composer dependencies
