@@ -2,8 +2,7 @@
 
 A simple assertion package to work with PDFs and PHPUnit.
 
-Please ensure that you have Imagick install/available and it has permission to write to PDF. (See:
-[this on stack overflow](https://stackoverflow.com/a/38222027). You may need to run something like:
+Please ensure that you have Imagick install/available and it has permission to write to PDF ([see this post on stack overflow](https://stackoverflow.com/a/38222027)). You may need to run something like:
 
 ``` sudo sed -i -e 's/rights="none" pattern="PDF"/rights="read|write" pattern="PDF"/' /etc/ImageMagick-6/policy.xml```
 
